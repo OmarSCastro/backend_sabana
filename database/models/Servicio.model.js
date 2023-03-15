@@ -1,7 +1,7 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const { RUTA_TABLE } = require('./Ruta.model');
 
-const SERVICIO_TABLE = 'rutas';
+const SERVICIO_TABLE = 'servicio';
 const ServicioSchema = {
     id_servicio: {
         allowNull: false,

@@ -1,4 +1,4 @@
-const { Model, DataTypes, Sequelize } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const MODULO_TABLE = 'modulo';
 const ModuloSchema = {
@@ -17,6 +17,7 @@ const ModuloSchema = {
 class Modulo extends Model {
     static associate(models) {
         this.hasMany(models.Rutas, {
+            as: 'moduloRutas',
             foreignKey: 'id_modulo'
         })
     }

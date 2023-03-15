@@ -1,4 +1,5 @@
-const { Model, DataTypes, Sequelize } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
+const { MODULO_TABLE } = require('./Modulo.model');
 
 const RUTA_TABLE = 'rutas';
 const RutaSchema = {
@@ -16,7 +17,7 @@ const RutaSchema = {
 
     id_modulo: {
         allowNull: false,
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         references: {
             model: 'modulo',
             key: 'id_modulo'
@@ -24,6 +25,7 @@ const RutaSchema = {
         onUpdate: 'CASCADE', // Esto ocurre al actualizar, un efecto en cascada y tambien se actualiza
         onDelete: 'SET NULL' // Esto ocurre al borrar, se establece a null
     },
+    
 
 }
 
