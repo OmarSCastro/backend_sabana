@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "nodemon app.js",
     "start": "nodemon app.js",
     "lint": "eslint",
     "migrations:generate": "sequelize-cli migration:generate --name",

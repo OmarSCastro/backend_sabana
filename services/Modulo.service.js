@@ -5,15 +5,15 @@ class ModuloService {
     constructor(){}
 
 async create(data){
-    const newModulo = await models.Modulo.create(data)
+    const newModulo = await models.modulo.create(data)
     return newModulo
 }
 async find(){
-    const res = await models.Modulo.findAll();
+    const res = await models.modulo.findAll();
     return res;
 }
 async findOne(id){
-    const modulo = await models.Modulo.findByPk(id);
+    const modulo = await models.modulo.findByPk(id);
     if (!modulo) {
         boom.notFound('Modulo no encontrado');
     }

@@ -11,8 +11,7 @@ const createRutaSchema = Joi.object({
 
 const updateRutaSchema = Joi.object({
     ruta: ruta,
-    id_modulo: id_modulo,
-    id_servicio: id_servicio
+    id_modulo: id_modulo
 });
 
 const getRutaSchema = Joi.object ({

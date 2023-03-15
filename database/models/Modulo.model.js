@@ -16,7 +16,7 @@ const ModuloSchema = {
 
 class Modulo extends Model {
     static associate(models) {
-        this.hasMany(models.Rutas, {
+        this.hasMany(models.ruta, {
             as: 'moduloRutas',
             foreignKey: 'id_modulo'
         })

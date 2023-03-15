@@ -65,3 +65,7 @@ validatorHandler(getServicioSchema, 'params'),
         }
     }
 )
+
+
+
+module.exports = router;

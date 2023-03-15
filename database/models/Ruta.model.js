@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-const { MODULO_TABLE } = require('./Modulo.model');
 
 const RUTA_TABLE = 'rutas';
 const RutaSchema = {
@@ -31,13 +30,13 @@ const RutaSchema = {
 
 class Ruta extends Model {
     static associate(models) {
-        this.belongsTo(models.Modulo, {
-            as:'moduloRuta',
+        this.belongsTo(models.modulo, {
+            // as:'moduloRuta',
             foreignKey: 'id_modulo'
         });
 
-        this.hasOne(models.Servicio, {
-            as:'moduloRuta',
+        this.hasOne(models.servicio, {
+            // as:'moduloRuta',
             foreignKey: 'id_ruta'
         });
     }
@@ -45,7 +44,7 @@ class Ruta extends Model {
     static config(sequelize){
         return {
             sequelize,
-            tableName: MODULO_TABLE,
+            tableName: RUTA_TABLE,
             modelName: 'ruta',
             timestamps: false
         }

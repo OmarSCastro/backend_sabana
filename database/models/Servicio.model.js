@@ -29,8 +29,8 @@ const ServicioSchema = {
 
 class Servicio extends Model {
     static associate(models) {
-        this.belongsTo(models.Rutas, {
-            as: 'rutaServicio',
+        this.belongsTo(models.ruta, {
+            // as: 'rutaServicio',
             foreignKey: 'id_ruta'
         });
     }

@@ -66,3 +66,6 @@ validatorHandler(getRutaSchema, 'params'),
         }
     }
 )
+
+
+module.exports = router;

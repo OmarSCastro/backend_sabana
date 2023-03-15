@@ -5,17 +5,17 @@ class ServicioService {
     constructor(){}
 
     async create(data){
-        const newServicio = await models.Servicio.create(data)
+        const newServicio = await models.servicio.create(data)
         return newServicio;
     };
 
     async find(){
-        const res = await models.Servicio.findAll();
+        const res = await models.servicio.findAll();
         return res;
     };
 
     async findOne(){
-        const servicio = await models.Servicio.findByPk(id);
+        const servicio = await models.servicio.findByPk(id);
         if (!servicio) {
             boom.notFound('Servicio no encontrado');
         }
