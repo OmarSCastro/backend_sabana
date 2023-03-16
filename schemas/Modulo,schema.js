@@ -12,7 +12,7 @@ const updateModuloSchema = Joi.object({
 });
 
 const getModuloSchema = Joi.object ({
-    id_modulo,
+    id_modulo: id_modulo,
 });
 
 const deleteModuloSchema = Joi.object ({

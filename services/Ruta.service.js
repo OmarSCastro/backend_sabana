@@ -11,32 +11,29 @@ async create(data){
 
 async find(){
     const res = await models.ruta.findAll();
-    console.log('************')
-    console.log(res)
-    console.log('************')
     return res;
 };
 
-async findOne(id){
-    const ruta = await models.ruta.findByPk(id);
+async findOne(id_ruta){
+    const ruta = await models.ruta.findByPk(id_ruta);
     if (!ruta) {
         boom.notFound('Ruta no encontrada');
     }
     return ruta
 };
 
-async update (id, changes){
-    const ruta = await this.findOne(id);
+async update (id_ruta, changes){
+    const ruta = await this.findOne(id_ruta);
     const res = await ruta.update(changes);
     return res
 };
 
-async delete(id){
-    const ruta = await this.findOne(id);
+async delete(id_ruta){
+    const ruta = await this.findOne(id_ruta);
     await models.Ruta.destroy()
     return {
         message: 'Ruta eliminada',
-        id
+        id_ruta
     }
 };
 

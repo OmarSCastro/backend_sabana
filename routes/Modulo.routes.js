@@ -15,12 +15,12 @@ router.get('/', async(req, res, next) => {
         }
 });
 
-router.get('/:id',
+router.get('/:id_modulo',
     validatorHandler(getModuloSchema, 'params'),
     async(req, res, next) => {
         try {
-            const {id} = req.params;
-            const modulo = await service.findOne(id);
+            const {id_modulo} = req.params;
+            const modulo = await service.findOne(id_modulo);
             res.status(200).json(modulo);
         } catch (error) {
             next(error)
@@ -39,27 +39,27 @@ validatorHandler(createModuloSchema, 'body'),
         }
 })
 
-router.patch('/:id',
+router.patch('/:id_modulo',
 validatorHandler(getModuloSchema, 'params'),
 validatorHandler(updateModuloSchema, 'body'),
     async(req, res, next) => {
         try {
-            const {id} = req.params;
+            const {id_modulo} = req.params;
             const body = req.body;
-            const modulo = await service.update(id, body);
+            const modulo = await service.update(id_modulo, body);
             res.status(200).json(modulo)
         } catch (error) {
             next(error)
         }
     }
 )
-router.delete('/:id',
+router.delete('/:id_modulo',
 validatorHandler(getModuloSchema, 'params'),
     async(req, res, next) => {
         try {
-            const {id} = req.params;
-            await service.delete(id);
-            res.status(200).json(res)
+            const {id_modulo} = req.params;
+            await service.delete(id_modulo);
+            res.status(200).json({id_modulo})
         } catch (error) {
             next(error)
         }
