@@ -14,7 +14,7 @@ class ServicioService {
         return res;
     };
 
-    async findOne(){
+    async findOne(id){
         const servicio = await models.servicio.findByPk(id);
         if (!servicio) {
             boom.notFound('Servicio no encontrado');
