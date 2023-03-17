@@ -10,12 +10,19 @@ class ServicioService {
     };
 
     async find(){
-        const res = await models.servicio.findAll();
+        const res = await models.servicio.findAll(
+            {
+                include: ['ruta']
+            }
+        );
+
         return res;
     };
 
     async findOne(id){
-        const servicio = await models.servicio.findByPk(id);
+        const servicio = await models.servicio.findByPk(id, {
+            include: ['ruta']
+        });
         if (!servicio) {
             boom.notFound('Servicio no encontrado');
         }
