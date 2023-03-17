@@ -10,11 +10,7 @@ async create(data){
 };
 
 async find(){
-    const res = await models.ruta.findAll(
-        {
-            include 
-        }
-    );
+    const res = await models.ruta.findAll();
     return res;
 };
 
