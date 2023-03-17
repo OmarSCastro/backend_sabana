@@ -33,6 +33,9 @@ validatorHandler(createRutaSchema, 'body'),
     async(req, res, next) => {
         try {
             const body = req.body;
+            console.log("***********")
+            console.log(body)
+            console.log("***********")
             const newRuta = await service.create(body);
             res.status(200).json(newRuta);
         } catch (error) {

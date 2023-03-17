@@ -6,6 +6,7 @@ class RutaService {
 
 async create(data){
     const newRuta = await models.ruta.create(data)
+    console.log('Aqui ando')
     return newRuta
 };
 
@@ -30,7 +31,7 @@ async update (id_ruta, changes){
 
 async delete(id_ruta){
     const ruta = await this.findOne(id_ruta);
-    await models.Ruta.destroy()
+    await ruta.destroy()
     return {
         message: 'Ruta eliminada',
         id_ruta
