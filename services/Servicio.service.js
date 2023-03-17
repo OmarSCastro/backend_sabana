@@ -12,7 +12,13 @@ class ServicioService {
     async find(){
         const res = await models.servicio.findAll(
             {
-                include: ['ruta']
+                include: [
+                    {
+                        as: 'ruta',
+                        model: models.ruta,
+                        include: ['modulo']
+                    }
+                ]
             }
         );
 
