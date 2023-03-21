@@ -11,12 +11,18 @@ async create(data){
 };
 
 async find(){
-    const res = await models.ruta.findAll();
+    const res = await models.ruta.findAll(
+        {
+            include: ['modulo']
+        }
+    );
     return res;
 };
 
 async findOne(id_ruta){
-    const ruta = await models.ruta.findByPk(id_ruta);
+    const ruta = await models.ruta.findByPk(id_ruta, {
+        include: ['modulo']
+    });
     if (!ruta) {
         boom.notFound('Ruta no encontrada');
     }

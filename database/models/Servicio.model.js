@@ -19,7 +19,7 @@ const ServicioSchema = {
         allowNull: false,
         type: DataTypes.INTEGER,
         references: {
-            model: RUTA_TABLE,
+            model: 'ruta',
             key: 'id_ruta'
         },
         onUpdate: 'CASCADE', // Esto ocurre al actualizar, un efecto en cascada y tambien se actualiza
@@ -30,7 +30,7 @@ const ServicioSchema = {
 class Servicio extends Model {
     static associate(models) {
         this.belongsTo(models.ruta, {
-            // as: 'rutaServicio',
+            as: 'ruta',
             foreignKey: 'id_ruta'
         });
     }
