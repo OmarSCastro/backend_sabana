@@ -1,9 +1,6 @@
 const boom = require('@hapi/boom');
 const {models} = require('../libs/sequelize');
 
-//todo checar que onda porque no detecta el model y el data, no los lee
-
-
 class PersonaService{
     constructor(){}
 

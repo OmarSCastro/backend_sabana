@@ -19,7 +19,7 @@ class Modulo extends Model {
         this.hasMany(models.ruta, {
             as: 'moduloRutas',
             foreignKey: 'id_modulo'
-        })
+        });
     }
 
     static config(sequelize){

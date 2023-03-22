@@ -1,3 +1,4 @@
+const { ConceptoFirmaSchema, ConceptoFirma } = require("./Concepto_Firma.model");
 const { Firma, FirmaSchema } = require("./firma.model");
 const { ModuloSchema, Modulo } = require("./Modulo.model");
 const { Persona, PersonaSchema } = require("./personas.model");
@@ -11,6 +12,7 @@ function setupModels(sequelize){
     Servicio.init(ServicioSchema, Servicio.config(sequelize));
     Persona.init(PersonaSchema, Persona.config(sequelize));
     Firma.init(FirmaSchema, Firma.config(sequelize));
+    ConceptoFirma.init(ConceptoFirmaSchema, ConceptoFirma.config(sequelize));
 
 
     Modulo.associate(sequelize.models);
@@ -18,6 +20,7 @@ function setupModels(sequelize){
     Servicio.associate(sequelize.models);
     Persona.associate(sequelize.models);
     Firma.associate(sequelize.models);
+    ConceptoFirma.associate(sequelize.models);
 };
 
 module.exports = setupModels

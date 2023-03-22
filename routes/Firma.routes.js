@@ -53,7 +53,7 @@ router.patch('/id_firma',
 });
 
 router.delete('/id_firma', 
-    validatorHandler(getFirmaSchema, 'params'),
+    validatorHandler(deleteFirmaSchema, 'params'),
     async(req, res, next) => {
     try {
         const {id_firma} = req.params;

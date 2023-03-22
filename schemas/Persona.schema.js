@@ -22,10 +22,10 @@ const updatePersonaSchema = Joi.object({
     actividad: actividad
 });
 const getPersonaSchema = Joi.object({
-    id_firma: id_firma,
+    id_persona: id_persona,
 });
 const deletePersonaSchema = Joi.object({
-    id_firma: id_firma.required(),
+    id_persona: id_persona.required(),
 });
 
 module.exports = {

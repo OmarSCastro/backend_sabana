@@ -54,7 +54,7 @@ validatorHandler(updateModuloSchema, 'body'),
     }
 )
 router.delete('/:id_modulo',
-validatorHandler(getModuloSchema, 'params'),
+validatorHandler(deleteModuloSchema, 'params'),
     async(req, res, next) => {
         try {
             const {id_modulo} = req.params;

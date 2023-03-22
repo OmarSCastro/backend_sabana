@@ -32,7 +32,10 @@ const PersonaSchema = {
 
 class Persona extends Model {
     static associate(models){
-        //todo falta hacer asociacion a firmas
+        this.hasMany(models.firma, {
+            as: 'personasFirma',
+            foreignKey: 'id_persona'
+        });
     };
 
     static config(sequelize){

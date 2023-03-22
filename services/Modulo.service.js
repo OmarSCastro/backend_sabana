@@ -26,9 +26,6 @@ async update (id, changes){
 }
 async delete(id){
     const modul = await this.findOne(id);
-    console.log('**********')
-    console.log(modul)
-    console.log('**********')
     await modul.destroy()
     return {
         message: 'Modulo eliminado',

@@ -1,5 +1,4 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
-const { RUTA_TABLE } = require('./Ruta.model');
 
 const SERVICIO_TABLE = 'servicio';
 const ServicioSchema = {

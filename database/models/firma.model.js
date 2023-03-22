@@ -10,11 +10,17 @@ const FirmaSchema = {
         type: DataTypes.INTEGER
     },
 
-    concepto:{
+    id_concepto:{
         allowNull: false,
-        type: DataTypes.STRING
+       type: DataTypes.INTEGER,
+       references: {
+        model: 'conceptoFirma',
+        key: 'id_concepto_firma'
+       },
+       onUpdate: 'CASCADE',
+       onDelete: 'SET NULL' 
     },
-    
+
     id_persona: {
        allowNull: false,
        type: DataTypes.INTEGER,
@@ -24,13 +30,19 @@ const FirmaSchema = {
        },
        onUpdate: 'CASCADE',
        onDelete: 'SET NULL' 
-    }
-
-}
+    },
+};
 
 class Firma extends Model {
     static associate(models) {
-        //todo hacer la asociacion correspondiente con persona
+
+        this.belongsTo(models.conceptoFirma, {
+            foreignKey: 'id_concepto_firma'
+        });
+
+        this.belongsTo(models.persona, {
+            foreignKey: 'id_persona'
+        });
     }
 
     static config(sequelize){
