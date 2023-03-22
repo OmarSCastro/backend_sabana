@@ -6,7 +6,6 @@ class RutaService {
 
 async create(data){
     const newRuta = await models.ruta.create(data)
-    console.log('Aqui ando')
     return newRuta
 };
 
