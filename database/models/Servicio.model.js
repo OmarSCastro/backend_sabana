@@ -23,7 +23,21 @@ const ServicioSchema = {
         },
         onUpdate: 'CASCADE', // Esto ocurre al actualizar, un efecto en cascada y tambien se actualiza
         onDelete: 'SET NULL' // Esto ocurre al borrar, se establece a null
+    },
+
+    origen: {
+        field: 'origen',
+        allowNull: false,
+        type: DataTypes.STRING,
+    },
+
+    destino: {
+        field: 'destino',
+        allowNull: false,
+        type: DataTypes.STRING,
     }
+      
+    
 }
 
 class Servicio extends Model {
